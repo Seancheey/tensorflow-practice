@@ -1,5 +1,8 @@
 import tensorflow as tf
 import numpy as np
+### 一个笼统的tensorflow介绍
+### 主要内容是用单个神经拟合一个简单函数
+
 
 # 使用 NumPy 生成100个数据
 # 使得 x-y 的对应关系为 y = 0.1 * x + 0.5
