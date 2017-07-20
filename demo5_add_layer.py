@@ -29,9 +29,10 @@ loss = tf.reduce_mean(tf.reduce_sum(tf.square(y_data - prediction), reduction_in
 train_step = tf.train.GradientDescentOptimizer(0.03).minimize(loss)
 
 # start session
-with tf.Session() as session:
-	session.run(tf.global_variables_initializer())
-	for i in range(1000):
-		session.run(train_step)
-		if i % 10 == 0:
-			print(session.run(loss))
+if __name__ == "__main__":
+	with tf.Session() as session:
+		session.run(tf.global_variables_initializer())
+		for i in range(1000):
+			session.run(train_step)
+			if i % 10 == 0:
+				print(session.run(loss))
