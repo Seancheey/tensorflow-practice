@@ -9,8 +9,9 @@ y = tf.placeholder(tf.float32, [None, 10])
 
 W = tf.Variable(tf.zeros([784, 10]))
 b = tf.Variable(tf.zeros([10]))
-y_predict = tf.matmul(x, W) + b
 
+# softmax is a type of activation function that makes all elements in a list lie in range [0,1] and add up to 1.
+y_predict = tf.nn.softmax(tf.matmul(x, W) + b)
 
 cross_entropy = tf.reduce_mean(-tf.reduce_sum(y * tf.log(y_predict), reduction_indices=[1]))  # loss
 
